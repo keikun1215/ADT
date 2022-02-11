@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- 
+こんにちは。今あなたがここを見ていると言うことは、
+あなたはこのソースを書いたけいくんそのものか、
+将来有望なエンジニアさんが覗いているのか、
+それとも...？
+取り敢えず、ソースを無断にパクるのはやめてくださいね。
+頑張って作ったので。
+by keikun1215
+-->
+<html><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi--><!--Hi-->
+  <head>
+    <link rel="icon" href="/favicon.ico" id="favicon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta charset="utf-8">
+    <meta name="author" content="keikun1215">
+    <meta name="viewport" content="width=device-width">
+    <title>Google</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      .textlines {
+    border: 2px ridge #0a0;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 0.5em;          /* 内側の余白量 */
+    background-color: #DDFFDD;  /* 背景色 */
+    width: 20em;             /* 横幅 */
+    font-size: 1em;          /* 文字サイズ */
+    line-height: 1.2;        /* 行の高さ */
+}
+      hr {
+    border: none;
+    border-top: 5px double #0f0;
+    color: #333;
+    overflow: visible;
+    background-color: #DDFFDD;
+    text-align: center;
+   height: 5px;
+}
+/*hi*/
+hr.tool1:after {
+    background: #DDFFDD;
+    content: 'URL Viewer';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+    border: 4px ridge;
+    border-color: #CFF1DF;
+}
+hr.tool2:after {
+    background: #DDFFDD;
+    content: 'Unhistory Playlist';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+    border: 4px ridge;
+    border-color: #CFF1DF;
+}
+      hr.tool3:after {
+    background: #DDFFDD;
+    content: 'History controller';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+    border: 4px ridge;
+    border-color: #CFF1DF;
+}
+      .img {
+    border: 4px ridge;
+    border-color: #333;
+}
+    </style>
+  </head>
+  <body>
+   <h1 style="border: 4px outset; border-color: lime; text-align: center; border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 40px;border-bottom-left-radius: 40px; box-shadow:0px -8px 8px -1px #ddd inset;">keikun1215 ToolBox</h1>
+    
+    <hr class="tool1"></hr>
+    
+
+<input class="textlines" type="text" id="message" value="https://">
+    <br>
+    <input type="button" onclick="showMessage()" value="iframe擬似表示"> <small>:ほとんどのサイトはこれで表示できません</small>
+    <br>
+    <input type="button" onclick="gosite()" value="サイトに移動"> <small>:新しいウィンドウを開かずに遷移します</small>
+    <br>
+    <input type="button" onclick="newsite()" value="サイトに移動"> <small>:新しいウィンドウを開き移動します。</small>
+    <script>
+      function showMessage() {
+      const textbox = document.getElementById("message")
+      const value = textbox.value
+      alert('表示しました。\n' + value +'\n表示されていない場合は、\n・URLが間違っている\n・対象サイトがiframeを拒否している\n等です。 ')
+        document.write('<iframe src="' + value + '" width="1000" height="650"></iframe>');
+      }
+      function gosite() {
+      const textbox = document.getElementById("message")
+      const value = textbox.value
+      location.replace(value)
+      }
+      function newsite() {
+      const textbox = document.getElementById("message")
+      const value = textbox.value
+      window.open(value)
+      }
+    </script>
+    <hr><br>
+    <hr class="tool2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/a0g1MTsYZSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3uJ4O-evw6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nC-bVtpIMd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <hr><br> 
+    <hr class="tool3">
+    <p>履歴操作ツール。ブラウザとHTML、JavaScriptの仕様上履歴削除は不可能？</p>
+    <small>追加する履歴の表示名:</small><input type="text" id="hname" value="Google">   <br>
+    <small>追加する履歴をクリックした時に移動するリンク:</small><input type="text" id="hurl" value="about:blank">   <br>
+    <small>履歴の追加数:</small><input type="text" id="addfor" value="10">   <br>
+    <input type="button" value="送信" onclick="buttonClick()">
+    <script>    
+      const aa = document.getElementById("hname")
+      const hname = aa.value
+      const bb = document.getElementById("hurl")
+      const hurl = bb.value
+      const cc = document.getElementById("addfor")
+      const addfor = cc.value
+  function buttonClick() {
+    
+     
+for (let i = 1; i < addfor; i++) {
+  history.pushState(null, hname, hurl);
+}
+  }
+    </script>
+  </body>
+</html>

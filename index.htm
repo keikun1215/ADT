@@ -17,7 +17,8 @@ by keikun1215
     <meta name="viewport" content="width=device-width">
     <title>Google</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
       .textlines {
@@ -66,9 +67,69 @@ hr.tool2:after {
     border: 4px ridge;
     border-color: #CFF1DF;
 }
+      hr.tool4:after {
+    background: #DDFFDD;
+    content: 'Empty';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+    border: 4px ridge;
+    border-color: #CFF1DF;
+}
       .img {
     border: 4px ridge;
     border-color: #333;
+}
+      .menu {
+    max-width: 600px;
+    margin:  0 auto;
+}
+      .menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+label { 
+    border: 4px outset;
+    border-color: #00dd00;
+    display: block;
+    text-align:center;
+    padding : 15px;
+    line-height: 1;
+    color :#005731;
+    background-color : #DDFFDD;
+    cursor :pointer;
+}
+
+.menu input {
+    display: none;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    background :#f4f4f4;
+    list-style: none;
+}
+
+.menu li {
+    margin-right: auto;
+  margin-left: auto;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+}
+
+#menu_bar01:checked ~ #links01 li,
+#menu_bar02:checked ~ #links02 li {
+    height: 20em;
+    opacity: 1;
 }
     </style>
   </head>
@@ -105,9 +166,18 @@ hr.tool2:after {
     </script>
     <hr><br>
     <hr class="tool2">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/a0g1MTsYZSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/3uJ4O-evw6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/nC-bVtpIMd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="menu">
+    <label for="menu_bar01">Open playlist1</label>
+    <input type="checkbox" id="menu_bar01" />
+    <ul id="links01">
+        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/a0g1MTsYZSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/3uJ4O-evw6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/nC-bVtpIMd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+    </ul>
+      </div>
+    
+    
+    
     <hr><br> 
     <hr class="tool3">
     <p>履歴操作ツール。ブラウザとHTML、JavaScriptの仕様上履歴削除は不可能？</p>
@@ -130,5 +200,7 @@ for (let i = 1; i < addfor; i++) {
 }
   }
     </script>
+    <hr><br>
+    <hr class="tool4">
   </body>
 </html>

@@ -3,6 +3,6 @@ function SuBmIt(){
   let vlu = Abc.value
   if(vlu === secret.SECRET_PSWRD){
   alert('√');
-  location.replace('./ADTs');
+  location.replace('./ADTs.html');
 }
 }

@@ -1,3 +1,5 @@
 function SuBmIt(){
-  let Abc = 
+  let Abc = document.getelementbyID('PlgpQ')
+  let vlu = Abc.value
+  
 }
